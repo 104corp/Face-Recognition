@@ -2,17 +2,17 @@
 import numpy as np
 import cv2
 import os
-
+from PIL import Image
+import glob
+image_list = []
+# %%
 # get folder path
 os.chdir('../')
-cwd = os.getcwd() + '\\'
-print('Current Folder Path' + cwd)
-# %%
-testCat = cv2.imread(cwd + 'img\cat.jpg')
-cv2.imshow('TestOpenCv', testCat)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-# %%
 
+# %% import whole img
+image_list = []
+for filename in glob.glob("dataset/*.jpg"):
+    im = Image.open(filename)
+    image_list.append(im)
 
 # %%
