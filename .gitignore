@@ -128,4 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-dataset/*
+dataset/6001-9000/*
+dataset/9001-13322/*
