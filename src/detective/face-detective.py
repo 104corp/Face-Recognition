@@ -19,7 +19,10 @@ face_cascade = cv2.CascadeClassifier(haarcascade_frontalface_default_path)
 face_cascade.load(haarcascade_frontalface_default_path)
 
 # Read the input image
-img = cv2.imread(cwd + "\\dataset\\00000A02.jpg")
+
+# imgPath = "\\dataset\\testCat.jpg"
+imgPath = "\\dataset\\6001-9000\\06009A46.jpg"
+img = cv2.imread(cwd + imgPath)
 
 # %%
 # Convert into grayscale
@@ -36,3 +39,6 @@ for (x, y, w, h) in faces:
 
 cv2.imshow('img', img)
 cv2.waitKey()
+
+
+# %%

@@ -11,7 +11,7 @@ os.chdir('../')
 
 # %% import whole img
 image_list = []
-for filename in glob.glob("dataset/*.jpg"):
+for filename in glob.glob("dataset//0001-3000//*.jpg"):
     im = Image.open(filename)
     image_list.append(im)
 
