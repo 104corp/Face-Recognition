@@ -22,6 +22,7 @@
     ```
     ## windows -activate
     {virtual env name}\Scripts\activate
+    face-recognition\\Scripts\\activate
     ## deactivate
     deactivate
     ```
