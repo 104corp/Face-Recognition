@@ -1,4 +1,5 @@
 # %%
+
 from sklearn import decomposition
 from sklearn.cluster import MiniBatchKMeans
 from sklearn.datasets import fetch_olivetti_faces
@@ -9,6 +10,7 @@ import logging
 import numpy as np
 
 # %%
+
 # Display progress logs on stdout
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s %(message)s')
@@ -18,6 +20,7 @@ image_shape = (64, 64)
 rng = RandomState(0)
 
 # %%
+
 # Load faces data
 faces, _ = fetch_olivetti_faces(return_X_y=True, shuffle=True,
                                 random_state=rng)
@@ -182,3 +185,6 @@ for name, estimator, center in estimators:
     plot_gallery(name, components_[:n_components], cmap=plt.cm.RdBu)
 
 plt.show()
+
+
+# %%
