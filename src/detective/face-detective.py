@@ -1,15 +1,9 @@
 # %%
 import cv2
-import os
 import pandas as pd
 import numpy as np
 import matplotlib as plt
 
-# %%
-# get folder path
-os.chdir("../")
-cwd = os.getcwd()
-print("Current Folder Path:  " + cwd)
 # %%
 haarcascade_frontalface_default_path = "D:\\workspace_python\\Face-Recognition\\src\\detective\\haarcascade_frontalface_default.xml"
 
@@ -21,8 +15,8 @@ face_cascade.load(haarcascade_frontalface_default_path)
 # Read the input image
 
 # imgPath = "\\dataset\\testCat.jpg"
-imgPath = "\\dataset\\6001-9000\\06009A46.jpg"
-img = cv2.imread(cwd + imgPath)
+# imgPath = "\\dataset\\6001-9000\\06009A46.jpg"
+img = image_list_part1[0]
 
 # %%
 # Convert into grayscale
