@@ -1,5 +1,5 @@
 {
-  "python.pythonPath": "d:\\workspace_python\\Face-Recognition\\face-recognition\\Scripts\\python.exe",
+  "python.pythonPath": "d:\\workspace_python\\Face-Recognition\\virtualenv\\Scripts\\python.exe",
   "python.formatting.provider": "autopep8",
   "git.ignoreLimitWarning": true
 }
