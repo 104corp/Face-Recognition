@@ -9,6 +9,7 @@ from time import time
 import logging
 import numpy as np
 
+
 # %%
 
 # Display progress logs on stdout
@@ -38,20 +39,6 @@ faces_centered = faces - faces.mean(axis=0)
 faces_centered -= faces_centered.mean(axis=1).reshape(n_samples, -1)
 
 print("Dataset consists of %d faces" % n_samples)
-
-
-def plot_gallery(title, images, n_col=n_col, n_row=n_row, cmap=plt.cm.gray):
-    plt.figure(figsize=(2. * n_col, 2.26 * n_row))
-    plt.suptitle(title, size=16)
-    for i, comp in enumerate(images):
-        plt.subplot(n_row, n_col, i + 1)
-        vmax = max(comp.max(), -comp.min())
-        plt.imshow(comp.reshape(image_shape), cmap=cmap,
-                   interpolation='nearest',
-                   vmin=-vmax, vmax=vmax)
-        plt.xticks(())
-        plt.yticks(())
-    plt.subplots_adjust(0.01, 0.05, 0.99, 0.93, 0.04, 0.)
 
 
 # %%
@@ -92,6 +79,22 @@ estimators = [
      decomposition.FactorAnalysis(n_components=n_components, max_iter=20),
      True),
 ]
+
+# %%
+
+
+def plot_gallery(title, images, n_col=n_col, n_row=n_row, cmap=plt.cm.gray):
+    plt.figure(figsize=(2. * n_col, 2.26 * n_row))
+    plt.suptitle(title, size=16)
+    for i, comp in enumerate(images):
+        plt.subplot(n_row, n_col, i + 1)
+        vmax = max(comp.max(), -comp.min())
+        plt.imshow(comp.reshape(image_shape), cmap=cmap,
+                   interpolation='nearest',
+                   vmin=-vmax, vmax=vmax)
+        plt.xticks(())
+        plt.yticks(())
+    plt.subplots_adjust(0.01, 0.05, 0.99, 0.93, 0.04, 0.)
 
 
 # %%
@@ -144,13 +147,13 @@ estimators = [
                                                   random_state=rng,
                                                   positive_dict=True),
      True),
-    ('Dictionary learning - positive code',
-        decomposition.MiniBatchDictionaryLearning(n_components=15, alpha=0.1,
-                                                  n_iter=50, batch_size=3,
-                                                  fit_algorithm='cd',
-                                                  random_state=rng,
-                                                  positive_code=True),
-     True),
+    #('Dictionary learning - positive code',
+    #    decomposition.MiniBatchDictionaryLearning(n_components=15, alpha=0.1,
+    #                                              n_iter=50, batch_size=3,
+    #                                              fit_algorithm='cd',
+    #                                              random_state=rng,
+    #                                              positive_code=True),
+    # True),
     ('Dictionary learning - positive dictionary & code',
         decomposition.MiniBatchDfictionaryLearning(n_components=15, alpha=0.1,
                                                    n_iter=50, batch_size=3,
